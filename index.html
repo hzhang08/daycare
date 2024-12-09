@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becky's Blooming Buds</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #8b4513;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            animation: slide 40s infinite linear;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .slider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200%); }
+        }
+
+        .intro {
+            padding: 3rem;
+            text-align: center;
+            background-color: #fff5eb;
+            color: #4a2511;
+        }
+
+        .contact {
+            padding: 3rem;
+            text-align: center;
+            background-color: #8b4513;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Panel -->
+    <div class="header">
+        <h1>Becky's Blooming Buds</h1>
+    </div>
+
+    <!-- Image Slider Panel -->
+    <div class="slider-container">
+        <div class="slider-text">
+            <h2>Where Every Child Blooms</h2>
+            <p>Nurturing minds, growing hearts</p>
+        </div>
+        <div class="slider">
+            <img src="images/IMG_0337.jpeg" alt="Daycare Image 1">
+            <img src="images/IMG_0338.jpeg" alt="Daycare Image 2">
+            <img src="images/IMG_0339.jpeg" alt="Daycare Image 3">
+            <img src="images/IMG_0340.jpeg" alt="Daycare Image 4">
+            <img src="images/IMG_0337.jpeg" alt="Daycare Image 1">
+            <img src="images/IMG_0338.jpeg" alt="Daycare Image 2">
+            <img src="images/IMG_0339.jpeg" alt="Daycare Image 3">
+            <img src="images/IMG_0340.jpeg" alt="Daycare Image 4">
+        </div>
+    </div>
+
+    <!-- Introduction Panel -->
+    <div class="intro">
+        <h2>Welcome to Our Daycare</h2>
+        <p>At Becky's Blooming Buds, we provide a nurturing and educational environment where your child can grow, learn, and thrive. Our experienced staff is dedicated to creating a safe and fun atmosphere that promotes early childhood development.</p>
+        <p>We offer programs for children aged 1 to 5 years, with activities designed to stimulate their curiosity and creativity.</p>
+    </div>
+
+    <!-- Contact Panel -->
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: (510) 320-4530</p>
+        <p>Email: bbloomingbudsdaycare@gmail.com</p>
+        <p>Location: Livermore, near Granada High School</p>
+        <p>Hours: Monday - Friday, 8:30 AM - 5:30 PM</p>
+        <p>License #: 015701171</p>
+    </div>
+</body>
+</html>
