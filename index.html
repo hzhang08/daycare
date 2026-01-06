@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-23JKPJ2NWT"></script>
@@ -12,122 +12,497 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Becky's Blooming Buds</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        box-sizing: border-box;
         }
-
-        .header {
-            background-color: #98b886;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
+        
+        @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
         }
-
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            height: 400px;
+        
+        @keyframes bounce-gentle {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
         }
-
-        .slider {
-            display: flex;
-            animation: slide 40s infinite linear;
+        
+        .float-animation {
+        animation: float 3s ease-in-out infinite;
         }
-
-        .slider img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            flex-shrink: 0;
+        
+        .bounce-animation {
+        animation: bounce-gentle 2s ease-in-out infinite;
         }
-
-        .slider-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-align: center;
-            font-size: 2rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .slider-container .slider-text p {
-                display: none;
-            }
-            .slider-text {
-                font-size: 1.5rem;
-                padding: 0.8rem 1.5rem;
-            }
-        }
-
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-200%); }
-        }
-
-        .intro {
-            padding: 3rem;
-            text-align: center;
-            background-color: #fff0f3;
-            color: #435c47;
-        }
-
-        .contact {
-            padding: 3rem;
-            text-align: center;
-            background-color: #98b886;
-            color: #fff;
-        }
-
     </style>
+    <style>@view-transition { navigation: auto; }</style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
-<body>
-    <!-- Header Panel -->
-    <div class="header">
-        <h1>Becky's Blooming Buds</h1>
+<body class="h-full">
+  <div id="app-wrapper" class="h-full w-full overflow-auto" style="font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;"><!-- Header -->
+   <header class="py-4 px-6 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+     <div class="flex items-center gap-3">
+      <div class="text-4xl bounce-animation">
+       🌈
+      </div>
+      <div>
+       <h1 id="daycare-name" class="font-bold text-2xl">Becky's Blooming Buds</h1>
+       <p id="tagline" class="text-sm">Where Every Child Blooms!</p>
+      </div>
+     </div>
+     <nav class="hidden md:flex gap-6"><a href="#about" class="font-semibold transition-all hover:scale-110">About Us</a> <a href="#programs" class="font-semibold transition-all hover:scale-110">Programs</a> <a href="#contact" class="font-semibold transition-all hover:scale-110">Contact</a>
+     </nav>
     </div>
-
-    <!-- Image Slider Panel -->
-    <div class="slider-container">
-        <div class="slider-text">
-            <h2>Where Every Child Blooms</h2>
-            <p>Nurturing minds, growing hearts</p>
+   </header><!-- Hero Section -->
+   <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+       <h2 id="hero-title" class="font-bold text-5xl mb-6 leading-tight">Nurturing Young Minds Through Play &amp; Learning</h2>
+       <p id="hero-subtitle" class="text-xl mb-8">A safe, loving environment for children 1 to 5 years old to grow, explore, and discover</p><button id="cta-button" class="px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all hover:scale-105 hover:shadow-xl">Schedule a Visit Today!</button>
+      </div>
+      <div class="relative">
+       <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-3xl p-8 shadow-lg float-animation">
+         <div class="text-6xl mb-3">
+          🎨
+         </div>
+         <p class="font-bold">Creative Arts</p>
         </div>
-        <div class="slider">
-            <img src="images/IMG_0337.jpeg" alt="Daycare Image 1">
-            <img src="images/IMG_0338.jpeg" alt="Daycare Image 2">
-            <img src="images/IMG_0339.jpeg" alt="Daycare Image 3">
-            <img src="images/IMG_0340.jpeg" alt="Daycare Image 4">
-            <img src="images/IMG_0337.jpeg" alt="Daycare Image 1">
-            <img src="images/IMG_0338.jpeg" alt="Daycare Image 2">
-            <img src="images/IMG_0339.jpeg" alt="Daycare Image 3">
-            <img src="images/IMG_0340.jpeg" alt="Daycare Image 4">
+        <div class="rounded-3xl p-8 shadow-lg float-animation" style="animation-delay: 0.5s;">
+         <div class="text-6xl mb-3">
+          📚
+         </div>
+         <p class="font-bold">Story Time</p>
         </div>
+        <div class="rounded-3xl p-8 shadow-lg float-animation" style="animation-delay: 1s;">
+         <div class="text-6xl mb-3">
+          🎵
+         </div>
+         <p class="font-bold">Music &amp; Dance</p>
+        </div>
+        <div class="rounded-3xl p-8 shadow-lg float-animation" style="animation-delay: 1.5s;">
+         <div class="text-6xl mb-3">
+          🏃
+         </div>
+         <p class="font-bold">Active Play</p>
+        </div>
+       </div>
+      </div>
+     </div>
     </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="about-title" class="font-bold text-4xl mb-8 text-center">Why Choose Becky's Blooming Buds?</h2>
+     <p id="about-text" class="text-xl text-center mb-12 max-w-3xl mx-auto">We provide a nurturing, structured environment where children aged 1-5 can thrive. Our experienced educators focus on early childhood development through play-based learning, helping each child reach important milestones.</p>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all">
+       <div class="text-5xl mb-4">
+        👩‍🏫
+       </div>
+       <h3 class="font-bold text-xl mb-3">Certified Educators</h3>
+       <p>Our team has years of early childhood education experience and ongoing training</p>
+      </div>
+      <div class="rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all">
+       <div class="text-5xl mb-4">
+        🛡️
+       </div>
+       <h3 class="font-bold text-xl mb-3">Safe Environment</h3>
+       <p>State-licensed facility with secure entry and age-appropriate play areas</p>
+      </div>
+      <div class="rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all">
+       <div class="text-5xl mb-4">
+        🥗
+       </div>
+       <h3 class="font-bold text-xl mb-3">Healthy Meals</h3>
+       <p>Nutritious breakfast, lunch, and snacks prepared fresh daily</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Programs Section -->
+   <section id="programs" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="font-bold text-4xl mb-12 text-center">Our Programs</h2>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="rounded-2xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         👶
+        </div>
+        <h3 class="font-bold text-2xl">Infant Care (0-18 months)</h3>
+       </div>
+       <p class="mb-4">Gentle care focused on bonding, sensory exploration, and establishing routines</p>
+       <ul class="space-y-2">
+        <li>✓ Individual attention and care</li>
+        <li>✓ Sensory play activities</li>
+        <li>✓ Parent communication daily</li>
+       </ul>
+      </div>
+      <div class="rounded-2xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         🧸
+        </div>
+        <h3 class="font-bold text-2xl">Toddlers (18 months - 3 years)</h3>
+       </div>
+       <p class="mb-4">Encouraging independence, language development, and social skills through play</p>
+       <ul class="space-y-2">
+        <li>✓ Potty training support</li>
+        <li>✓ Language development activities</li>
+        <li>✓ Group play and sharing</li>
+       </ul>
+      </div>
+      <div class="rounded-2xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         🎒
+        </div>
+        <h3 class="font-bold text-2xl">Preschool (3-5 years)</h3>
+       </div>
+       <p class="mb-4">Kindergarten prep with focus on literacy, math basics, and social-emotional learning</p>
+       <ul class="space-y-2">
+        <li>✓ Pre-literacy and math skills</li>
+        <li>✓ Structured learning activities</li>
+        <li>✓ School readiness program</li>
+       </ul>
+      </div>
+      <div class="rounded-2xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         ⏰
+        </div>
+        <h3 class="font-bold text-2xl">Flexible Schedules</h3>
+       </div>
+       <p class="mb-4">Full-time and part-time options to fit your family's needs</p>
+       <ul class="space-y-2">
+        <li>✓ Full-day care (8:30am-5:30pm)</li>
+        <li>✓ Half-day programs available</li>
+        <li>✓ Extended hours by request</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto rounded-3xl p-12 shadow-xl">
+     <h2 id="contact-title" class="font-bold text-4xl mb-8 text-center">Get in Touch</h2>
+     <p class="text-xl text-center mb-12">Ready to give your child the best start? Contact us to schedule a tour!</p>
+     <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="text-center">
+       <div class="text-4xl mb-3">
+        📞
+       </div>
+       <h3 class="font-bold mb-2">Phone</h3>
+       <p id="phone-number">(510) 320-4530</p>
+      </div>
+      <div class="text-center">
+       <div class="text-4xl mb-3">
+        ✉️
+       </div>
+       <h3 class="font-bold mb-2">Email</h3>
+       <p id="email-address">bbloomingbudsdaycare@gmail.com</p>
+      </div>
+      <div class="text-center">
+       <div class="text-4xl mb-3">
+        📍
+       </div>
+       <h3 class="font-bold mb-2">Location</h3>
+       <p id="address">Livermore, near Granada High School</p>
+      </div>
+     </div>
+     <div class="rounded-2xl p-8">
+      <h3 class="font-bold text-xl mb-4 text-center">Send Us a Message</h3>
+      <form id="contact-form" class="space-y-4">
+       <div class="grid md:grid-cols-2 gap-4">
+        <div><label for="parent-name" class="block font-semibold mb-2">Parent Name</label> <input type="text" id="parent-name" required class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-80" placeholder="Your name">
+        </div>
+        <div><label for="child-name" class="block font-semibold mb-2">Child's Name</label> <input type="text" id="child-name" class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-80" placeholder="Child's name">
+        </div>
+       </div>
+       <div><label for="email" class="block font-semibold mb-2">Email</label> <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-80" placeholder="your.email@example.com">
+       </div>
+       <div><label for="message" class="block font-semibold mb-2">Message</label> <textarea id="message" required rows="4" class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-80" placeholder="Tell us about your inquiry..."></textarea>
+       </div><button type="submit" class="w-full py-4 rounded-lg font-bold text-lg shadow-lg transition-all hover:scale-105">Send Message</button>
+      </form>
+      <div id="form-message" class="mt-4 text-center font-semibold hidden"></div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-6 text-center">
+    <p class="mb-2">© 2026 Becky's Blooming Buds. All rights reserved.</p>
+    <p class="text-sm">Creating happy memories and bright futures, one day at a time 🌟</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#FFF5E6",
+      surface_color: "#FFFFFF",
+      text_color: "#2D3748",
+      primary_action_color: "#FF6B9D",
+      secondary_action_color: "#4ECDC4",
+      font_family: "Comic Sans MS",
+      font_size: 16,
+      daycare_name: "Becky's Blooming Buds",
+      tagline: "Where Every Child Blooms!",
+      hero_title: "Nurturing Young Minds Through Play & Learning",
+      hero_subtitle: "A safe, loving environment for children under 5 to grow, explore, and discover",
+      cta_button: "Schedule a Visit Today!",
+      about_title: "Why Choose Becky's Blooming Buds?",
+      about_text: "We provide a nurturing, structured environment where children aged 1-5 can thrive. Our experienced educators focus on early childhood development through play-based learning, helping each child reach important milestones.",
+      contact_title: "Get in Touch",
+      phone_number: "(510) 320-4530",
+      email_address: "bbloomingbudsdaycare@gmail.com",
+      address: "Livermore, near Granada High School"
+    };
 
-    <!-- Introduction Panel -->
-    <div class="intro">
-        <h2>Welcome to Our Daycare</h2>
-        <p>At Becky's Blooming Buds, we provide a nurturing and educational environment where your child can grow, learn, and thrive. Our experienced staff is dedicated to creating a safe and fun atmosphere that promotes early childhood development.</p>
-        <p>We offer programs for children aged 1 to 5 years, with activities designed to stimulate their curiosity and creativity.</p>
-    </div>
+    async function onConfigChange(config) {
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = "'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif";
 
-    <!-- Contact Panel -->
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: (510) 320-4530</p>
-        <p>Email: bbloomingbudsdaycare@gmail.com</p>
-        <p>Location: Livermore, near Granada High School</p>
-        <p>Hours: Monday - Friday, 8:30 AM - 5:30 PM</p>
-        <p>License #: 015701171</p>
-    </div>
-</body>
+      document.body.style.backgroundColor = backgroundColor;
+      document.body.style.color = textColor;
+      document.getElementById('app-wrapper').style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+      const header = document.querySelector('header');
+      header.style.backgroundColor = surfaceColor;
+      header.style.color = textColor;
+
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.style.color = primaryActionColor;
+      });
+
+      document.getElementById('daycare-name').style.color = primaryActionColor;
+      document.getElementById('daycare-name').style.fontSize = `${baseSize * 1.5}px`;
+      document.getElementById('tagline').style.color = textColor;
+      document.getElementById('tagline').style.fontSize = `${baseSize * 0.875}px`;
+
+      document.getElementById('hero-title').style.color = textColor;
+      document.getElementById('hero-title').style.fontSize = `${baseSize * 3.125}px`;
+      document.getElementById('hero-subtitle').style.color = textColor;
+      document.getElementById('hero-subtitle').style.fontSize = `${baseSize * 1.25}px`;
+
+      const ctaButton = document.getElementById('cta-button');
+      ctaButton.style.backgroundColor = primaryActionColor;
+      ctaButton.style.color = surfaceColor;
+      ctaButton.style.fontSize = `${baseSize * 1.125}px`;
+
+      const activityCards = document.querySelectorAll('.float-animation');
+      activityCards.forEach(card => {
+        card.style.backgroundColor = surfaceColor;
+        card.style.color = textColor;
+      });
+
+      const aboutSection = document.getElementById('about');
+      aboutSection.style.backgroundColor = surfaceColor;
+      document.getElementById('about-title').style.color = primaryActionColor;
+      document.getElementById('about-title').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('about-text').style.color = textColor;
+      document.getElementById('about-text').style.fontSize = `${baseSize * 1.25}px`;
+
+      const featureCards = aboutSection.querySelectorAll('.rounded-2xl');
+      featureCards.forEach(card => {
+        card.style.backgroundColor = backgroundColor;
+        card.style.color = textColor;
+        const heading = card.querySelector('h3');
+        if (heading) heading.style.fontSize = `${baseSize * 1.25}px`;
+        const text = card.querySelector('p');
+        if (text) text.style.fontSize = `${baseSize}px`;
+      });
+
+      const programsSection = document.getElementById('programs');
+      programsSection.style.backgroundColor = backgroundColor;
+      const programsTitle = programsSection.querySelector('h2');
+      programsTitle.style.color = primaryActionColor;
+      programsTitle.style.fontSize = `${baseSize * 2.5}px`;
+
+      const programCards = programsSection.querySelectorAll('.rounded-2xl');
+      programCards.forEach(card => {
+        card.style.backgroundColor = surfaceColor;
+        card.style.color = textColor;
+        const heading = card.querySelector('h3');
+        if (heading) heading.style.fontSize = `${baseSize * 1.5}px`;
+        const text = card.querySelector('p');
+        if (text) text.style.fontSize = `${baseSize}px`;
+        const listItems = card.querySelectorAll('li');
+        listItems.forEach(item => item.style.fontSize = `${baseSize}px`);
+      });
+
+      const contactSection = document.getElementById('contact');
+      contactSection.style.backgroundColor = backgroundColor;
+      const contactContainer = contactSection.querySelector('.rounded-3xl');
+      contactContainer.style.backgroundColor = surfaceColor;
+      contactContainer.style.color = textColor;
+      
+      document.getElementById('contact-title').style.color = primaryActionColor;
+      document.getElementById('contact-title').style.fontSize = `${baseSize * 2.5}px`;
+
+      const contactInfoDivs = contactSection.querySelectorAll('.text-center > h3');
+      contactInfoDivs.forEach(heading => {
+        heading.style.fontSize = `${baseSize}px`;
+        heading.style.color = textColor;
+      });
+
+      const contactText = contactSection.querySelectorAll('.text-center > p');
+      contactText.forEach(text => {
+        text.style.fontSize = `${baseSize}px`;
+        text.style.color = textColor;
+      });
+
+      const formContainer = contactSection.querySelector('.rounded-2xl');
+      formContainer.style.backgroundColor = backgroundColor;
+
+      const formLabels = contactSection.querySelectorAll('label');
+      formLabels.forEach(label => {
+        label.style.color = textColor;
+        label.style.fontSize = `${baseSize}px`;
+      });
+
+      const formInputs = contactSection.querySelectorAll('input, textarea');
+      formInputs.forEach(input => {
+        input.style.borderColor = secondaryActionColor;
+        input.style.color = textColor;
+        input.style.fontSize = `${baseSize}px`;
+      });
+
+      const submitButton = contactSection.querySelector('button[type="submit"]');
+      submitButton.style.backgroundColor = secondaryActionColor;
+      submitButton.style.color = surfaceColor;
+      submitButton.style.fontSize = `${baseSize * 1.125}px`;
+
+      const footer = document.querySelector('footer');
+      footer.style.backgroundColor = surfaceColor;
+      footer.style.color = textColor;
+      const footerText = footer.querySelectorAll('p');
+      footerText.forEach(text => {
+        text.style.fontSize = `${baseSize}px`;
+      });
+
+      document.getElementById('daycare-name').textContent = config.daycare_name || defaultConfig.daycare_name;
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('cta-button').textContent = config.cta_button || defaultConfig.cta_button;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('phone-number').textContent = config.phone_number || defaultConfig.phone_number;
+      document.getElementById('email-address').textContent = config.email_address || defaultConfig.email_address;
+      document.getElementById('address').textContent = config.address || defaultConfig.address;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["daycare_name", config.daycare_name || defaultConfig.daycare_name],
+          ["tagline", config.tagline || defaultConfig.tagline],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["cta_button", config.cta_button || defaultConfig.cta_button],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["about_text", config.about_text || defaultConfig.about_text],
+          ["contact_title", config.contact_title || defaultConfig.contact_title],
+          ["phone_number", config.phone_number || defaultConfig.phone_number],
+          ["email_address", config.email_address || defaultConfig.email_address],
+          ["address", config.address || defaultConfig.address]
+        ])
+      });
+
+      onConfigChange(window.elementSdk.config);
+    } else {
+      onConfigChange(defaultConfig);
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formMessage = document.getElementById('form-message');
+      formMessage.textContent = 'Thank you for your interest! We\'ll be in touch soon! 🎉';
+      formMessage.style.color = window.elementSdk ? (window.elementSdk.config.secondary_action_color || defaultConfig.secondary_action_color) : defaultConfig.secondary_action_color;
+      formMessage.classList.remove('hidden');
+      
+      this.reset();
+      
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b96b65b362d5e49',t:'MTc2NzY1NTI5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
